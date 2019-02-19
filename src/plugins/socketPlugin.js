@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import io from 'socket.io-client';
 
-const socket = io('https://jongsoochat.herokuapp.com:3000');
+const socket = io('http://jongsoochat.herokuapp.com:3000');
 
 
 const SocketPlugin = {
