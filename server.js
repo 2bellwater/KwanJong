@@ -23,7 +23,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = require('http').createServer(app);
+var server = require('https').createServer(app);
 var io = require('socket.io')(server,{
   pingTimeout: 1000,
 });
