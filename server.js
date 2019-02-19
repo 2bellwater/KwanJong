@@ -80,3 +80,12 @@ function normalizePort(val) {
 
   return false;
 }
+
+
+/**
+ * jongsoo
+ * add cors
+ */
+
+var cors = require('cors');
+app.use(cors);
