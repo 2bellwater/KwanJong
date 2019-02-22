@@ -35,7 +35,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // cookie-parser 설정
-app.use(cookieParser());
+//app.use(cookieParser());
 
 // 세션 설정
 app.use(expressSession({
