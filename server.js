@@ -8,10 +8,10 @@ var bodyParser = require('body-parser');
 //, errorHandler = require('errorhandler');
 
 // 에러 핸들러 모듈 사용
-var expressErrorHandler = require('express-error-handler');
+//var expressErrorHandler = require('express-error-handler');
 
 // Session 미들웨어 불러오기
-var expressSession = require('express-session');
+//var expressSession = require('express-session');
 
 var app = express();
 
