@@ -4,7 +4,7 @@ var express = require('express')
 , path = require('path');
 
 var bodyParser = require('body-parser')
-, cookieParser = require('cookie-parser')
+//, cookieParser = require('cookie-parser')
 , errorHandler = require('errorhandler');
 
 // 에러 핸들러 모듈 사용
