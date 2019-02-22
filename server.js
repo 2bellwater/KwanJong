@@ -3,9 +3,9 @@ var express = require('express')
 , http = require('http')
 , path = require('path');
 
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 //, cookieParser = require('cookie-parser')
-, errorHandler = require('errorhandler');
+//, errorHandler = require('errorhandler');
 
 // 에러 핸들러 모듈 사용
 var expressErrorHandler = require('express-error-handler');
