@@ -38,12 +38,13 @@ app.use(bodyParser.json())
 //app.use(cookieParser());
 
 // 세션 설정
+/*
 app.use(expressSession({
 	secret:'my key',
 	resave:true,
 	saveUninitialized:true
 }));
-
+*/
 // 모듈로 분리한 데이터베이스 파일 불러오기
 //var database = require('./database/database');
 
