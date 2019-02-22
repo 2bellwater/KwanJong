@@ -67,7 +67,8 @@ server.listen(port);
 
 function normalizePort(val) {
   var port = parseInt(val, 10);
-
+  console.log('a');
+  
   if (isNaN(port)) {
     // named pipe
     return val;
