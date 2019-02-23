@@ -18,7 +18,7 @@ var app = express();
 // 모듈로 분리한 설정 파일 불러오기
 var config = require('./config');
 
-var TAG = '[server3]';
+var TAG = '[server4]';
 /**
  * Get port from environment and store in Express.
  */
