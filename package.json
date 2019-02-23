@@ -13,6 +13,7 @@
     "@vue/cli": "^3.4.0",
     "express": "^4.16.4",
     "global": "^4.3.2",
+    "mongoose": "^5.4.15",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
     "serve-static": "^1.13.2",
