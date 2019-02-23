@@ -137,11 +137,12 @@ app.use(cors);
  * Passport
  */
 
+ /*
  var passport = require('passport');
  var flash = require('connect-flash');
 
  app.use(passport.initialize());  //passport init
  app.use(passport.session()); //save user session
  app.use(flash());  //user flash msg
-
+*/
 
