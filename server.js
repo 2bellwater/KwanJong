@@ -3,15 +3,15 @@ var express = require('express')
 , http = require('http')
 , path = require('path');
 
-var bodyParser = require('body-parser');
-//, cookieParser = require('cookie-parser')
-//, errorHandler = require('errorhandler');
+var bodyParser = require('body-parser')
+, cookieParser = require('cookie-parser')
+, errorHandler = require('errorhandler');
 
 // 에러 핸들러 모듈 사용
-//var expressErrorHandler = require('express-error-handler');
+var expressErrorHandler = require('express-error-handler');
 
 // Session 미들웨어 불러오기
-//var expressSession = require('express-session');
+var expressSession = require('express-session');
 
 var app = express();
 
@@ -35,18 +35,18 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // cookie-parser 설정
-//app.use(cookieParser());
+app.use((cookieParser));
 
 // 세션 설정
-/*
+
 app.use(expressSession({
 	secret:'my key',
 	resave:true,
 	saveUninitialized:true
 }));
-*/
+
 // 모듈로 분리한 데이터베이스 파일 불러오기
-//var database = require('./database/database');
+var database = require('./database/database');
 
 
 
@@ -70,7 +70,7 @@ var server = http.createServer(app).listen(process.env.PORT || app.get('port'), 
 	console.log(TAG+'server start. port : ' + app.get('port'));
 
 	// 데이터베이스 초기화
-//	database.init(app,config);
+	database.init(app,config);
    
 });
 
