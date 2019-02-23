@@ -1,6 +1,6 @@
 {
   "name": "chat-vue",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -62,6 +62,6 @@
   ],
   "description": "## Project setup ``` yarn install ```",
   "main": "babel.config.js",
-  "author": "",
+  "author": "JongSoo <mekingme@gmail.com>",
   "license": "ISC"
 }
