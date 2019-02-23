@@ -18,7 +18,7 @@ var app = express();
 // 모듈로 분리한 설정 파일 불러오기
 var config = require('./config');
 
-var TAG = '[server]';
+var TAG = '[server1]';
 /**
  * Get port from environment and store in Express.
  */
@@ -70,7 +70,7 @@ var server = http.createServer(app).listen(process.env.PORT || app.get('port'), 
 	console.log(TAG+'server start. port : ' + app.get('port'));
 
 	// 데이터베이스 초기화
-	//database.init(app,config);
+	database.init(app,config);
    
 });
 
@@ -144,5 +144,5 @@ app.use(cors);
  app.use(passport.initialize());  //passport init
  app.use(passport.session()); //save user session
  app.use(flash());  //user flash msg
-*/
+*/ 
 
