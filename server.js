@@ -46,7 +46,7 @@ app.use(expressSession({
 }));
 */
 // 모듈로 분리한 데이터베이스 파일 불러오기
-//var database = require('./database/database');
+var database = require('./database/database');
 
 
 
