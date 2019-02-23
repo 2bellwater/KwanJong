@@ -46,7 +46,7 @@ app.use(expressSession({
 }));
 */
 // 모듈로 분리한 데이터베이스 파일 불러오기
-var database = require('./database/database');
+//var database = require('./database/database');
 
 
 
@@ -70,7 +70,7 @@ var server = http.createServer(app).listen(process.env.PORT || app.get('port'), 
 	console.log(TAG+'server start. port : ' + app.get('port'));
 
 	// 데이터베이스 초기화
-	database.init(app,config);
+//	database.init(app,config);
    
 });
 
