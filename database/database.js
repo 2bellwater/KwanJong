@@ -53,7 +53,7 @@ function createSchema(app, config){
         var curModel = mongoose.model(curItem.collection, curSchema);
 
         // curItem.file 불러와서 createSchema 함수를 통해 스키마생성
-        //var curSchema = require(curItem.file).createSchema(mongoose);
+        var curSchema = require(curItem.file).createSchema(mongoose);
         console.log(TAG+"%s module is called and set schema", curItem.file);
         
         database[curItem.schemaName] = curSchema;
