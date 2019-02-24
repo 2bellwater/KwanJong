@@ -18,6 +18,10 @@ var app = express();
 // 모듈로 분리한 설정 파일 불러오기
 var config = require('./config');
 
+var serveStatic = require("serve-static");
+
+app.use(serveStatic(path.join(__dirname, '/dist')));
+
 var TAG = '[server5]';
 /**
  * Get port from environment and store in Express.
@@ -35,7 +39,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // cookie-parser 설정
-app.use((cookieParser));
+app.use(cookieParser());
 
 // 세션 설정
 
@@ -55,9 +59,6 @@ app.all('/*', function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   next();
 });
-var serveStatic = require("serve-static");
-
-app.use(serveStatic(path.join(__dirname, '/dist')));
 
 
 
@@ -72,6 +73,28 @@ var server = http.createServer(app).listen(process.env.PORT || app.get('port'), 
 	// 데이터베이스 초기화
 	database.init(app,config);
    
+});
+
+
+//확인되지 않은 예외 처리 - 서버 프로세스 종료하지 않고 유지함
+process.on('uncaughtException', function (err) {
+	console.log('uncaughtException 발생함 : ' + err);
+	console.log('서버 프로세스 종료하지 않고 유지함.');
+	
+	console.log(err.stack);
+});
+
+// 프로세스 종료 시에 데이터베이스 연결 해제
+process.on('SIGTERM', function () {
+    console.log("프로세스가 종료됩니다.");
+    app.close();
+});
+
+app.on('close', function () {
+	console.log("Express 서버 객체가 종료됩니다.");
+	if (database.db) {
+		database.db.close();
+	}
 });
 
 var io = require('socket.io')(server,{
