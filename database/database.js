@@ -22,7 +22,7 @@ function connect(app, config){
         console.log(TAG+'database is connected : '+config.db_url);
 
         // config에 등록된 스키마 및 모델 객체 생성
-        //createSchema(app,config);
+        createSchema(app,config);
     });
     database.db.on('disconnected',function(){
         console.log(TAG+'database is disconnected');

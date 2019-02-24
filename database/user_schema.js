@@ -3,8 +3,10 @@ var crypro = require('crypto');
 var Schema = {};
 
 var TAG = '[user_schema]';
+
 Schema.createSchema = function(mongoose) {
-	
+    
+    console.log(TAG+'createSchema is called');
 	// 스키마 정의
 	var UserSchema = mongoose.Schema({
 		email: {type: String, 'default':''}
@@ -22,7 +24,7 @@ Schema.createSchema = function(mongoose) {
 	    this._password = password;
 	    this.salt = this.makeSalt();
 	    this.hashed_password = this.encryptPassword(password);
-	    console.log('virtual password 호출됨 : ' + this.hashed_password);
+	    console.log(TAG+'virtual password 호출됨 : ' + this.hashed_password);
 	  })
 	  .get(function() { return this._password });
 	
@@ -44,10 +46,10 @@ Schema.createSchema = function(mongoose) {
 	// 인증 메소드 - 입력된 비밀번호와 비교 (true/false 리턴)
 	UserSchema.method('authenticate', function(plainText, inSalt, hashed_password) {
 		if (inSalt) {
-			console.log('authenticate 호출됨 : %s -> %s : %s', plainText, this.encryptPassword(plainText, inSalt), hashed_password);
+			console.log(TAG+'authenticate 호출됨 : %s -> %s : %s', plainText, this.encryptPassword(plainText, inSalt), hashed_password);
 			return this.encryptPassword(plainText, inSalt) === hashed_password;
 		} else {
-			console.log('authenticate 호출됨 : %s -> %s : %s', plainText, this.encryptPassword(plainText), this.hashed_password);
+			console.log(TAG+'authenticate 호출됨 : %s -> %s : %s', plainText, this.encryptPassword(plainText), this.hashed_password);
 			return this.encryptPassword(plainText) === this.hashed_password;
 		}
 	});
@@ -87,7 +89,7 @@ Schema.createSchema = function(mongoose) {
 		return this.find({}, callback);
 	});
 	
-	console.log('UserSchema 정의함.');
+	console.log(TAG+'UserSchema 정의함.');
 
 	return UserSchema;
 };
