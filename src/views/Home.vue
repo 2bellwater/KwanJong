@@ -1,13 +1,9 @@
 <template>
-  <HelloWorld />
+  <youtube video-id="PYXCF_6wbaY" />
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
-
   export default {
-    components: {
-      HelloWorld
-    }
+    name: 'Home'
   }
 </script>
