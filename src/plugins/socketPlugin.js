@@ -16,6 +16,12 @@ const SocketPlugin = {
       });
     };
 
+    vue.prototype.$creatUser = ($payload) =>{
+      socket.emit('crateuser',{
+        msg: $payload.msg,
+        name: $payload.name,
+      });
+    };
     // 인스턴스 메소드 추가
     vue.prototype.$socket = socket;
   },

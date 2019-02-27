@@ -120,6 +120,20 @@ io.on('connection', function(socket){
     socket.broadcast.emit('chat', msg);
   });
 
+  socket.on('creatuser', function(data) {
+    console.log('Message from %s: %s', data.name, data.msg);
+
+    var msg = {
+      from: {
+        id: data.userid,
+        pw: data.userpw,
+      },
+      msg: data.msg
+    };
+
+    // 메시지를 전송한 클라이언트를 제외한 모든 클라이언트에게 메시지를 전송한다
+    console.log(TAG+msg);
+  });
   socket.on('disconnect', function() {
     console.log(TAG+'user disconnected: ' + socket.name);
   });

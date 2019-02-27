@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Login from './views/Login.vue';
 import ChatRoom from './views/ChatRoom.vue';
 import VueYoutube from 'vue-youtube';
+import CreatID from './views/CreatID'
 
 Vue.use(Router);
 Vue.use(VueYoutube)
@@ -20,6 +21,11 @@ export default new Router({
       path: '/char-room/:username',
       name: 'ChatRoom',
       component: ChatRoom,
+    },
+    {
+      path: '/creat-id/',
+      name: 'CreatID',
+      component: CreatID,
     },
   ],
 });

@@ -10,6 +10,9 @@
       <div class="text-xs-center">
         <v-btn @click="joinSubmit" round color="primary" dark>JOIN</v-btn>
       </div>
+      <div class="text-xs-center">
+        <v-btn @click="goCreatID" round color="primary" dark>goCreatID</v-btn>
+      </div>
     </v-flex>
   </v-layout>
 </template>
@@ -26,6 +29,9 @@ export default {
   methods: {
     joinSubmit() {
       this.$emit('joinSubmit', this.userName); // 상위의 컴포넌트인 Login.vue로 joinSubmit 이벤트를 보낸다.
+    },
+    goCreatID(){
+      this.$emit('goCreatID', this.userName);
     },
   },
 };

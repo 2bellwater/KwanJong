@@ -1,6 +1,7 @@
 <template>
   <div class="inner-wrap" fluid fill-height>
-    <Loginform-component v-on:joinSubmit="joinSubmit"></Loginform-component>
+    <Loginform-component v-on:joinSubmit="joinSubmit" v-on:goCreatID="goCreatID"></Loginform-component>
+
   </div>
 </template>
 <script src=“https://unpkg.com/vue@2.3.2”></script>
@@ -21,6 +22,9 @@ export default {
   methods: {
     joinSubmit(userName) {
       this.$router.push(`/char-room/${userName}`);
+    },
+    goCreatID(userName){
+      this.$router.push(`/creat-id`);
     },
   },
 };
