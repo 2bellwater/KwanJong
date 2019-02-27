@@ -3,6 +3,7 @@ import io from 'socket.io-client';
 
 const socket = io();
 
+var TAG = '[socketPlugin]';
 
 const SocketPlugin = {
   install(vue) {
@@ -10,6 +11,7 @@ const SocketPlugin = {
     });
 
     vue.prototype.$sendMessage = ($payload) => {
+      console.log(TAG+'sendMessage is called');
       socket.emit('chat', {
         msg: $payload.msg,
         name: $payload.name,
@@ -17,6 +19,7 @@ const SocketPlugin = {
     };
 
     vue.prototype.$creatUser = ($payload) =>{
+      console.log(TAG+'creatUser is called');
       socket.emit('crateuser',{
         msg: $payload.msg,
         name: $payload.name,
