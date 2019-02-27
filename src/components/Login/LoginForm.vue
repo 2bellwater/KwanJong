@@ -11,7 +11,7 @@
         <v-btn @click="joinSubmit" round color="primary" dark>JOIN</v-btn>
       </div>
       <div class="text-xs-center">
-        <v-btn @click="goCreatID" round color="primary" dark>goCreatID</v-btn>
+        <v-btn @click="goCreatID" round color="primary" dark>go-Creat-ID</v-btn>
       </div>
     </v-flex>
   </v-layout>

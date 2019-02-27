@@ -1,6 +1,6 @@
 <template>
   <div class="inner-wrap" fluid fill-height>
-    <CreatIDform-component v-on:goLogin="goLogin"></CreatIDform-component>
+    <CreatIDform-component v-on:goLogin="goLogin" v-on:creatUser="creatUser"></CreatIDform-component>
   </div>
 
 </template>
