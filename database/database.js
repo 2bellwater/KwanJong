@@ -59,7 +59,7 @@ function createSchema(app, config){
         database[curItem.schemaName] = curSchema;
         database[curItem.modelName] = curModel;
 
-        console.log('Schema Name=[%s], ModelName=[%s] is setted in database attribution', curItem.schemaName, curItem.modelName);
+        console.log(TAG+'Schema Name=[%s], ModelName=[%s] is setted in database attribution', curItem.schemaName, curItem.modelName);
     }
 
     app.set('database',database);
